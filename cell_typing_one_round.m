@@ -7,14 +7,16 @@ addpath ./tiff_loading/utilities
 addpath(genpath('./tiff_loading/Fiji.app'));
 javaaddpath('./tiff_loading/Fiji.app/mij.jar');
 
-filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah102/sah102_section3_CCK_Cal_M2R_2x2.nd2';
+% filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah102/sah102_section3_CCK_Cal_M2R_2x2.nd2';
+filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice1_Round1.nd2';
+
 
 max_sigma=50;%%Maximum size of cells
 min_sigma=30;%%Minimum size of cells
 z_threshold=2;%%Cell brightness threshold
 volumeThreshold=300;%%Cell size threshold
 patchRadius=25; %% size of patches to show cells at the last step
-
+gcamp_channel=2;%Which channel is Gcamp
 % colors=[0 0.5 1;0 1 0;1 0 0;0 1 1];
 colors=[0 1 1;1 0 0;0 1 0;0 0.5 1];%% color map of 4 channels
 %% Step 0 - load datasets
@@ -89,7 +91,7 @@ drawnow
 
 %% Step 2 - cell type
 t=0;
-for ch=3
+for ch=gcamp_channel
     for i=1:size(detections{ch},1)
         t=t+1;
         detectionsConsolidated(t,:)=detections{ch}(i,:);
