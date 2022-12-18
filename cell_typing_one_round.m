@@ -18,7 +18,7 @@ volumeThreshold=300;%%Cell size threshold
 patchRadius=25; %% size of patches to show cells at the last step
 gcamp_channel=2;%Which channel is Gcamp
 % colors=[0 0.5 1;0 1 0;1 0 0;0 1 1];
-colors=[0 1 1;1 0 0;0 1 0;0 0.5 1];%% color map of 4 channels
+colors=[0 1 1;1 0 0;0 1 0;0 0.5 1;0 1 1;1 0 0;0 1 0;0 0.5 1];%% color map of 4 channels
 %% Step 0 - load datasets
 if ~exist('I')
     I=double(load_tiff(filename));
