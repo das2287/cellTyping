@@ -125,7 +125,7 @@ end
 
 
 close all
-[final_pass,vfield_final]=deformableReg(max(I1,[],3),max(I2transformed,[],3),20,50,200);
+[final_pass,vfield_final]=deformableReg(max(I1,[],3),max(I2transformed,[],3),20,10,200);
 
 for i=1:size(I{sliceB},3)
     I2transformed_warped(:,:,i)=imwarp(I2transformed(:,:,i),vfield_final);
