@@ -9,8 +9,8 @@ addpath(genpath('./tiff_loading/Fiji.app'));
 javaaddpath('./tiff_loading/Fiji.app/mij.jar');
 
 % 
-% round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice1_Round1.nd2';
-% round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice1_Round2_PV_SATB1.nd2';
+round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice1_Round1.nd2';
+round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice1_Round2_PV_SATB1.nd2';
 
 % round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice2_Round1.nd2';
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice2_Round2_PV_SATB1002.nd2';
@@ -21,8 +21,8 @@ javaaddpath('./tiff_loading/Fiji.app/mij.jar');
 % round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice4_Round1.nd2';
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice4_Round2_PV_SATB1.nd2';
 
-round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round1.nd2';
-round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round2_PV_SATB1.nd2';
+% round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round1.nd2';
+% round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round2_PV_SATB1.nd2';
 
 % round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice6_Round1.nd2';
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice6_Round2_PV_SATB1.nd2';

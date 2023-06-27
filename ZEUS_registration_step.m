@@ -21,11 +21,15 @@ javaaddpath('./tiff_loading/Fiji.app/mij.jar');
 % round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice4_Round1.nd2';
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice4_Round2_PV_SATB1.nd2';
 
-round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round1.nd2';
-round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round2_PV_SATB1.nd2';
+% round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round1.nd2';
+% round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice5_Round2_PV_SATB1.nd2';
 
 % round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice6_Round1.nd2';
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice6_Round2_PV_SATB1.nd2';
+
+
+round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah023/sah023_Slice1_Round1.nd2';
+round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah023/SAH023_Slice1_Round2_PV_SATB1.nd2';
 
 
 round_1_shortname=strsplit(round_1_filename,'/');round_1_shortname=round_1_shortname{end};
@@ -107,21 +111,21 @@ for i=1:size(I{sliceB},3)
 end
 I1=I{sliceA};
 I2=I{sliceB};
-detections_moving=myDetections(I2transformed);
-detections_fixed=myDetections(I1);
-
-[idx,D]=knnsearch(detections_fixed,detections_moving);
-
-
-for i=1:size(detections_moving,1)
-    if D(i)<radius
-        hold on
-        plot(detections_moving(i,1),detections_moving(i,2),'y.','MarkerSize',10);
-        plot(detections_fixed(idx(i),1),detections_fixed(idx(i),2),'c.','MarkerSize',10);
-        
-        plot([detections_moving(i,1) detections_fixed(idx(i),1)],[detections_moving(i,2) detections_fixed(idx(i),2)],'w-','LineWidth',2);
-    end
-end
+% detections_moving=myDetections(I2transformed);
+% detections_fixed=myDetections(I1);
+% 
+% [idx,D]=knnsearch(detections_fixed,detections_moving);
+% 
+% 
+% for i=1:size(detections_moving,1)
+%     if D(i)<radius
+%         hold on
+%         plot(detections_moving(i,1),detections_moving(i,2),'y.','MarkerSize',10);
+%         plot(detections_fixed(idx(i),1),detections_fixed(idx(i),2),'c.','MarkerSize',10);
+%         
+%         plot([detections_moving(i,1) detections_fixed(idx(i),1)],[detections_moving(i,2) detections_fixed(idx(i),2)],'w-','LineWidth',2);
+%     end
+% end
 
 
 close all
