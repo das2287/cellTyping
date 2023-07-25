@@ -1,4 +1,4 @@
-function vfieldTotal=pointDeformerIterative(moving,fixed,sigma)
+function vfieldTotal=pointDeformerIterative(moving,fixed,sigma,brightness)
 close all
 % sigma=100;
 
@@ -12,7 +12,7 @@ notDone=1;
 moving_warped=moving;
 vfieldTotal=repmat(zeros(size(moving)),[1 1 2]);
 while notDone==1
-    imagesc(10*myimfuse(moving_warped,fixed));axis equal;axis off
+    imagesc(brightness*myimfuse(moving_warped,fixed));axis equal;axis off
     title('Click successive pairs of matching landmarks - Chose RED first then GREEN  - right click when done');
     
     [x,y]=getpts;
@@ -61,7 +61,7 @@ while notDone==1
     end
     end
     
-    imagesc(10*myimfuse(moving_warped,fixed));axis equal;axis off
+    imagesc(brightness*myimfuse(moving_warped,fixed));axis equal;axis off
     done=input('Done?(1) Add more?(0), Start Over(2)');
     if done==1
         notDone=0;

@@ -28,8 +28,8 @@ javaaddpath('./tiff_loading/Fiji.app/mij.jar');
 % round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah020/sah020_Slice6_Round2_PV_SATB1.nd2';
 
 
-round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah023/sah023_Slice1_Round1.nd2';
-round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah023/SAH023_Slice1_Round2_PV_SATB1.nd2';
+round_1_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah027/sah027_Slice1_Round1_CCK_SOM_NPY.nd2';
+round_2_filename='/Users/erdem/Dropbox/FAST_datasets/immuno_exps/sah027/sah027_Slice1_Round2_PV_SATB1.nd2';
 
 
 round_1_shortname=strsplit(round_1_filename,'/');round_1_shortname=round_1_shortname{end};
@@ -45,7 +45,7 @@ end
 for i=1:length(I0)
     I{i}=I0{i}(:,:,:,gcamp_channel);
 end
-
+%% 
 sliceA=1;
 sliceB=2;
 

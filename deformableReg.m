@@ -1,4 +1,4 @@
-function [movingApplied_reg,sumVfield]=deformableReg(fixed,moving,numblocks,numiter,sigma)
+function [movingApplied_reg,sumVfield]=deformableReg(fixed,moving,numblocks,numiter,sigma,brightness)
 fixedApplied=fixed;
 movingApplied=moving;
 myimfuse = @(x,y)(imfuse(x,y,'falsecolor','Scaling','joint','ColorChannels',[1 2 0]));
@@ -55,7 +55,7 @@ for t=1:numiter
     ylabel('Corr');
     set(gca,'FontSize',20,'FontWeight','bold');drawnow
     subplot(2,4,[2:4 6:8])
-    imagesc(10*myimfuse(fixed,moving_reg{t+1}));axis off;set(gcf,'color','w');drawnow
+    imagesc(brightness*myimfuse(fixed,moving_reg{t+1}));axis off;set(gcf,'color','w');drawnow
     subplot(2,4,5)
     imagesc(sqrt(sum(sumVfield.^2,3)));colorbar;axis off;drawnow
     title('Displacement magnitutde');
