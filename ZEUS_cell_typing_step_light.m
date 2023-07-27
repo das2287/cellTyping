@@ -102,19 +102,10 @@ for ch=1:4
     area{ch}=vol(vol>volumeThreshold);
 end
 
-figure;
-imagesc(10*myimfuse(max(I(:,:,:,gcamp_channel),[],3),max(I(:,:,:,gcamp_channel+4),[],3)));
-hold on
-for i=1:size(detections{gcamp_channel},1)
-%     text(detections{gcamp_channel}(i,1),detections{gcamp_channel}(i,2)-5,num2str(i),'Color','m','FontWeight','bold','FontSize',15);
-    text(detections{gcamp_channel}(i,1),detections{gcamp_channel}(i,2)-5,num2str(area{gcamp_channel}(i)),'Color','m','FontWeight','bold','FontSize',15);
-end
-title('Round 1');
-drawnow
 
 
 %% Step 2 - cell type
-clear detectionsConsolidated patch
+clear detectionsConsolidated patch patch_location
 t=0;
 for ch=gcamp_channel
     for i=1:size(detections{ch},1)
@@ -134,7 +125,7 @@ for i=1:size(detectionsConsolidated,1)
             if ch==1
                 t=t+1
             end
-            patch{t,ch}=tmp;
+            patch{t,ch}=tmp;patch_location{t}=detectionsConsolidated(i,:);
         catch
             detectionsRemoved(i)=1;
         end
@@ -154,7 +145,7 @@ end
 sizePatch=size(detectionsConsolidated,1);
 for t=1:remaining
     for ch=1:8
-        patch{sizePatch+t,ch}=ones(size(patch{1,ch}));
+        patch{sizePatch+t,ch}=ones(size(patch{1,ch}));patch_location{sizePatch+t}=[nan nan];
     end
 end
 
@@ -175,6 +166,19 @@ for i=1:size(patch,1)
         barcodePicture=[];
     end
 end
+
+figure;
+imagesc(10*myimfuse(max(I(:,:,:,gcamp_channel),[],3),max(I(:,:,:,gcamp_channel+4),[],3)));
+hold on
+for i=1:size(patch,1)
+    text(patch_location{i}(1),patch_location{i}(2)-5,num2str(i),'Color','m','FontWeight','bold','FontSize',15);
+end
+title('Round 1');
+drawnow
+
+
+
+
 
 figure
 imagesc(permute(stackPicture,[2 1 3]));axis equal;axis off
